@@ -1,0 +1,476 @@
+export default function BadmintonCourtBooking() {
+  const courts = [
+    {
+      id: 1,
+      name: "Court A",
+      type: "Wooden Indoor Court",
+      price: "₹350 / hour",
+      status: "Available",
+      image:
+        "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 2,
+      name: "Court B",
+      type: "Synthetic Tournament Court",
+      price: "₹500 / hour",
+      status: "Few Slots Left",
+      image:
+        "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 3,
+      name: "Court C",
+      type: "Training Practice Court",
+      price: "₹250 / hour",
+      status: "Available",
+      image:
+        "https://images.unsplash.com/photo-1626224583932-5b8b2d96ff27?q=80&w=1200&auto=format&fit=crop",
+    },
+  ];
+
+  const slots = [
+    "06:00 AM",
+    "07:00 AM",
+    "08:00 AM",
+    "09:00 AM",
+    "05:00 PM",
+    "06:00 PM",
+    "07:00 PM",
+    "08:00 PM",
+  ];
+
+  const reviews = [
+    {
+      name: "Rahul",
+      review:
+        "Very clean courts and smooth booking experience. Best badminton arena nearby.",
+    },
+    {
+      name: "Priya",
+      review:
+        "Affordable pricing and excellent lighting for evening games.",
+    },
+    {
+      name: "Arjun",
+      review:
+        "Easy slot booking with instant confirmation. Highly recommended.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white font-sans">
+      {/* Navbar */}
+      <nav className="flex items-center justify-between px-8 py-5 border-b border-gray-800 sticky top-0 backdrop-blur-md bg-black/50 z-50">
+        <div>
+          <h1 className="text-3xl font-black tracking-wide text-green-400">
+            ShuttleArena
+          </h1>
+        </div>
+
+            Courts
+          </a>
+            Reviews
+          </a>
+        <button className="bg-green-500 hover:bg-green-600 transition px-5 py-2 rounded-xl font-semibold shadow-lg shadow-green-500/30">
+          Login
+        </button>
+      </nav>
+      {/* Hero Section */}
+      <section className="grid lg:grid-cols-2 gap-10 items-center px-8 lg:px-20 py-16">
+          <p className="uppercase tracking-[6px] text-green-400 mb-3 text-sm">
+          </p>
+
+          <h2 className="text-5xl lg:text-7xl font-black leading-tight">
+            Book Your
+            <span className="text-green-400"> Badminton Court </span>
+            Instantly
+          </h2>
+
+          <p className="text-gray-300 mt-6 text-lg leading-relaxed max-w-2xl">
+            availability, secure payments, coaching sessions, membership
+            plans, and tournament bookings.
+
+          <div className="flex flex-wrap gap-4 mt-8">
+            <button className="bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg transition shadow-xl shadow-green-500/20">
+              Book Now
+
+            <button className="border border-gray-700 hover:border-green-400 hover:text-green-400 px-7 py-4 rounded-2xl font-bold text-lg transition">
+              Explore Courts
+            </button>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4 mt-12">
+            <div className="bg-gray-900 rounded-2xl p-5 border border-gray-800">
+              <h3 className="text-3xl font-black text-green-400">15+</h3>
+              <p className="text-gray-400 mt-2">Indoor Courts</p>
+            </div>
+
+            <div className="bg-gray-900 rounded-2xl p-5 border border-gray-800">
+              <h3 className="text-3xl font-black text-green-400">24/7</h3>
+              <p className="text-gray-400 mt-2">Online Booking</p>
+            </div>
+
+            <div className="bg-gray-900 rounded-2xl p-5 border border-gray-800">
+              <h3 className="text-3xl font-black text-green-400">5K+</h3>
+              <p className="text-gray-400 mt-2">Happy Players</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <img
+            src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200&auto=format&fit=crop"
+            alt="Badminton Court"
+            className="rounded-3xl shadow-2xl border border-gray-800 object-cover h-[550px] w-full"
+          />
+
+          <div className="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md border border-gray-700 rounded-2xl p-5 w-[280px]">
+            <p className="text-green-400 font-bold">Live Availability</p>
+            <div className="flex justify-between mt-3 text-sm text-gray-300">
+              <span>Court A</span>
+              <span>Available</span>
+            </div>
+            <div className="flex justify-between mt-2 text-sm text-gray-300">
+              <span>Court B</span>
+              <span>2 Slots Left</span>
+            </div>
+            <div className="flex justify-between mt-2 text-sm text-gray-300">
+              <span>Court C</span>
+              <span>Available</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="px-8 lg:px-20 py-16 bg-gray-950">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-black">Platform Features</h2>
+          <p className="text-gray-400 mt-4 text-lg">
+            Everything needed for modern badminton court management.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              title: "Instant Booking",
+              desc: "Real-time slot selection with immediate confirmation.",
+              icon: "🏸",
+            },
+            {
+              title: "Online Payments",
+              desc: "Secure payment gateway integration with invoices.",
+              icon: "💳",
+            },
+            {
+              title: "Tournament Mode",
+              desc: "Host tournaments and manage player registrations.",
+              icon: "🏆",
+            },
+            {
+              title: "Membership Plans",
+              desc: "Monthly and yearly membership packages.",
+              icon: "⭐",
+            },
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className="bg-gray-900 border border-gray-800 rounded-3xl p-7 hover:border-green-500 transition duration-300 hover:-translate-y-1"
+            >
+              <div className="text-5xl mb-4">{feature.icon}</div>
+              <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Courts Section */}
+      <section id="courts" className="px-8 lg:px-20 py-16">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
+          <div>
+            <h2 className="text-4xl font-black">Available Courts</h2>
+            <p className="text-gray-400 mt-3 text-lg">
+              Choose your preferred badminton court.
+            </p>
+          </div>
+
+          <button className="bg-green-500 hover:bg-green-600 transition px-6 py-3 rounded-xl font-semibold">
+            View All Courts
+          </button>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {courts.map((court) => (
+            <div
+              key={court.id}
+              className="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 hover:border-green-500 transition"
+            >
+              <img
+                src={court.image}
+                alt={court.name}
+                className="h-64 w-full object-cover"
+              />
+
+              <div className="p-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-bold">{court.name}</h3>
+                    <p className="text-gray-400 mt-2">{court.type}</p>
+                  </div>
+
+                  <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+                    {court.status}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between mt-6">
+                  <div>
+                    <p className="text-gray-400 text-sm">Starting Price</p>
+                    <h4 className="text-2xl font-black text-green-400">
+                      {court.price}
+                    </h4>
+                  </div>
+
+                  <button className="bg-green-500 hover:bg-green-600 transition px-5 py-3 rounded-xl font-bold">
+                    Book Slot
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Booking Section */}
+      <section
+        id="booking"
+        className="px-8 lg:px-20 py-16 bg-gray-950"
+      >
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-4xl font-black">Quick Booking</h2>
+            <p className="text-gray-400 mt-4 text-lg">
+              Reserve your slot in less than a minute.
+            </p>
+
+            <div className="mt-8 space-y-5">
+              <input
+                type="text"
+                placeholder="Enter Your Name"
+                className="w-full bg-gray-900 border border-gray-700 focus:border-green-400 outline-none rounded-2xl px-5 py-4"
+              />
+
+              <input
+                type="email"
+                placeholder="Enter Email Address"
+                className="w-full bg-gray-900 border border-gray-700 focus:border-green-400 outline-none rounded-2xl px-5 py-4"
+              />
+
+              <select className="w-full bg-gray-900 border border-gray-700 focus:border-green-400 outline-none rounded-2xl px-5 py-4">
+                <option>Select Court</option>
+                <option>Court A</option>
+                <option>Court B</option>
+                <option>Court C</option>
+              </select>
+
+              <input
+                type="date"
+                className="w-full bg-gray-900 border border-gray-700 focus:border-green-400 outline-none rounded-2xl px-5 py-4"
+              />
+
+              <button className="w-full bg-green-500 hover:bg-green-600 transition py-4 rounded-2xl text-lg font-black shadow-xl shadow-green-500/20">
+                Confirm Booking
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div className="bg-gray-900 rounded-3xl border border-gray-800 p-8">
+              <h3 className="text-3xl font-black mb-6">Available Time Slots</h3>
+
+              <div className="grid grid-cols-2 gap-4">
+                {slots.map((slot, index) => (
+                  <button
+                    key={index}
+                    className="border border-gray-700 hover:border-green-400 hover:bg-green-500/10 rounded-2xl py-4 transition font-semibold"
+                  >
+                    {slot}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mt-8 bg-black rounded-2xl p-6 border border-gray-800">
+                <h4 className="text-2xl font-bold text-green-400">
+                  Membership Benefits
+                </h4>
+
+                <ul className="mt-5 space-y-3 text-gray-300">
+                  <li>✔ Priority court access</li>
+                  <li>✔ Discounted booking prices</li>
+                  <li>✔ Tournament participation</li>
+                  <li>✔ Free coaching sessions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="px-8 lg:px-20 py-16">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-black">Membership Plans</h2>
+          <p className="text-gray-400 mt-4 text-lg">
+            Flexible plans for casual and professional players.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {[
+            {
+              plan: "Basic",
+              price: "₹999",
+              desc: "Perfect for beginners",
+            },
+            {
+              plan: "Pro",
+              price: "₹2499",
+              desc: "Best for regular players",
+            },
+            {
+              plan: "Elite",
+              price: "₹4999",
+              desc: "Advanced & tournament players",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-gray-900 rounded-3xl border border-gray-800 p-8 hover:border-green-500 transition"
+            >
+              <h3 className="text-3xl font-black">{item.plan}</h3>
+              <p className="text-gray-400 mt-3">{item.desc}</p>
+
+              <div className="mt-8 text-5xl font-black text-green-400">
+                {item.price}
+                <span className="text-lg text-gray-400"> / month</span>
+              </div>
+
+              <ul className="mt-8 space-y-4 text-gray-300">
+                <li>✔ Unlimited bookings</li>
+                <li>✔ Premium support</li>
+                <li>✔ Locker facility</li>
+                <li>✔ Coaching access</li>
+              </ul>
+
+              <button className="w-full mt-8 bg-green-500 hover:bg-green-600 transition py-4 rounded-2xl font-bold text-lg">
+                Choose Plan
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="px-8 lg:px-20 py-16 bg-gray-950">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-black">Player Reviews</h2>
+          <p className="text-gray-400 mt-4 text-lg">
+            Trusted by badminton enthusiasts.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <div
+              key={index}
+              className="bg-gray-900 border border-gray-800 rounded-3xl p-8"
+            >
+              <div className="text-yellow-400 text-2xl">★★★★★</div>
+              <p className="text-gray-300 mt-5 leading-relaxed text-lg">
+                {review.review}
+              </p>
+
+              <div className="mt-6 flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center text-black font-black text-xl">
+                  {review.name[0]}
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-lg">{review.name}</h4>
+                  <p className="text-gray-400 text-sm">Verified Player</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-800 px-8 lg:px-20 py-10 bg-black">
+        <div className="grid lg:grid-cols-4 gap-10">
+          <div>
+            <h2 className="text-3xl font-black text-green-400">
+              ShuttleArena
+            </h2>
+            <p className="text-gray-400 mt-4 leading-relaxed">
+              Premium badminton court booking platform with modern facilities
+              and instant online reservations.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-xl mb-4">Quick Links</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>Home</li>
+              <li>Courts</li>
+              <li>Tournaments</li>
+              <li>Membership</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-xl mb-4">Support</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>Help Center</li>
+              <li>Contact Us</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-xl mb-4">Contact</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>📍 Bangalore, India</li>
+              <li>📞 +91 9876543210</li>
+              <li>✉ support@shuttlearena.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+          © 2026 ShuttleArena. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+}
+            </button>
+          </p>
+            Reserve premium badminton courts online with real-time slot
+            Indoor Badminton Booking Platform
+        <div>
+
+        </div>
+
+          <a href="#pricing" className="hover:text-green-400 transition">
+            Pricing
+          </a>
+          <a href="#reviews" className="hover:text-green-400 transition">
+          <a href="#booking" className="hover:text-green-400 transition">
+          </a>
+            Booking
+        <div className="hidden md:flex gap-8 text-gray-300 font-medium">
